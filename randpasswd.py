@@ -29,9 +29,25 @@ def main():
     """ Parses CLI arguments and prints out generated password """
 
     parser = argparse.ArgumentParser(prog="randpasswd")
-    parser.add_argument("-l", "--length", type=int, default=6)
-    parser.add_argument("-s", "--sep", type=str, default=" ")
-    parser.add_argument("--bits-of-security", action="store_true")
+    parser.add_argument(
+        "-l",
+        "--length",
+        type=int,
+        default=6,
+        help="number of words to use in passphrase (default 6)",
+    )
+    parser.add_argument(
+        "-s",
+        "--sep",
+        type=str,
+        default=" ",
+        help='separator character to use (default " ")',
+    )
+    parser.add_argument(
+        "--bits-of-security",
+        action="store_true",
+        help="show the security of a password",
+    )
 
     args = parser.parse_args()
 
