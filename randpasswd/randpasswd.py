@@ -1,12 +1,14 @@
 """
 Generate a random passphrase using diceware wordlist
 """
+import sys
 import secrets
 from typing import List
 import argparse
 from math import log2
+import pathlib
 
-WORDLIST_FILENAME = "wordlist.txt"
+WORDLIST_FILENAME = pathlib.Path(__file__).parent.absolute() / "wordlist.txt"
 
 wordlist: List[str] = []
 with open(WORDLIST_FILENAME, "r") as f:
@@ -57,6 +59,8 @@ def main():
         )
     else:
         print(generate_random_password(args.length, args.sep))
+
+    sys.exit(0)
 
 
 if __name__ == "__main__":

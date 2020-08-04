@@ -2,8 +2,8 @@
 
 This program can generate a random passpharse using a wordlist from [Diceware](http://world.std.com/~reinhold/diceware.wordlist.asc). Use this program by running the following command.
 ```bash
-$ python randpasswd.py
-$ python randpasswd.py --length 7 --sep _
+$ randpasswd
+$ randpasswd --length 7 --sep _
 ```
 
 ### Usage
@@ -21,12 +21,19 @@ optional arguments:
 ```
 See this help page with
 ```bash
-$ python randpasswd.py --help
+$ randpasswd --help
+```
+
+## Installation
+
+Install this program with
+```bash
+pip install .
 ```
 
 #### Bits of security
 
 The dictionary used has 7776 words or special characters. The bits of security in the passphrase is then `length * log2(7776)`. For a 6 word passphrase that is 77 bits of security. The following command will show how many bits other passwords have
 ```bash
-$ python randpasswd.py --length 7 --bits-of-security
+$ randpasswd --length 7 --bits-of-security
 ```
