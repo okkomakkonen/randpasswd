@@ -26,9 +26,14 @@ $ randpasswd --help
 
 ## Installation
 
-Install this program with
+Clone this git repository and run
 ```bash
-pip install .
+$ pip install .
+```
+
+Install directly from git with
+```bash
+$ pip install git+https://github.com/okkomakkonen/randpasswd.git
 ```
 
 #### Bits of security
